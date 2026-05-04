@@ -17,6 +17,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 import com.omkar.hadpad.data.local.DatabaseProvider
 import com.omkar.hadpad.data.repository.TaskRepository
@@ -54,11 +55,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TaskScreen(viewModel: TaskViewModel, modifier: Modifier) {
 
-    val tasks by viewModel.tasks.collectAsState()
+    val tasks by viewModel.tasks.collectAsStateWithLifecycle()
 
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
-    var priority by remember { mutableStateOf(2) } // default medium
+    var priority by remember { mutableIntStateOf(2) } // default medium
 
     Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
 
