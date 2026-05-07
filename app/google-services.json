@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "11312787047",
+    "project_id": "serene-sanctuary-4h5i8",
+    "storage_bucket": "serene-sanctuary-4h5i8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11312787047:android:dcf4ea2e4f085026a12ec2",
+        "android_client_info": {
+          "package_name": "com.omkar.hadpad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11312787047-jbatmqgo0ae56t2mttff2nv5870pvnag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.omkar.hadpad",
+            "certificate_hash": "34656b04715c293489b42784a43903cd558fccab"
+          }
+        },
+        {
+          "client_id": "11312787047-heu6oij1mblhlk8e8ocetvhgll9m5r3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa6VOHiqwDuCv9xaqof2tnB3_SDSAjkC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11312787047-heu6oij1mblhlk8e8ocetvhgll9m5r3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
