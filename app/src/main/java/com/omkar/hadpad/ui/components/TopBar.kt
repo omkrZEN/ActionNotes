@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
@@ -31,18 +32,12 @@ import com.omkar.hadpad.R
 
 
 @Composable
-fun ActionTopBar() {
-
-    val statusBarPadding = WindowInsets.statusBars
-        .asPaddingValues()
-        .calculateTopPadding()
-
+fun ActionTopBar(modifier: Modifier) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            //.statusBarsPadding()
+            .statusBarsPadding()
             .padding(
-                top = statusBarPadding * 0.85f,
                 start = 16.dp,
                 end = 16.dp,
                 bottom = 14.dp
@@ -99,7 +94,7 @@ fun ActionTopBar() {
 
             Text(
                 text = "A",
-                color = Color(0xFF7C5CFF),
+                color = Color(0xFF714FFD),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.SemiBold
             )
