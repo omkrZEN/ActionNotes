@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/app_icon.webp" width="140" alt="ActionNotes App Icon"/>
+</p>
+
 # ActionNotes
 
 ## Overview
