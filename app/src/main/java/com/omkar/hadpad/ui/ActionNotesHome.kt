@@ -82,7 +82,7 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
 
         Column {
 
-            ActionTopBar()
+            ActionTopBar(modifier = Modifier.padding(innerPadding))
 
             Spacer(modifier = Modifier.height(6.dp))
 
@@ -100,7 +100,6 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
             TaskScreen(
                 viewModel = viewModel,
                 selectedCategory = selectedCategory,
-                modifier = Modifier.padding(innerPadding)
             )
 
         }
@@ -122,7 +121,6 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
 fun TaskScreen(
     viewModel: TaskViewModel,
     selectedCategory: String,
-    modifier: Modifier
 ) {
 
     val tasks by viewModel.tasks.collectAsStateWithLifecycle()
@@ -148,7 +146,7 @@ fun TaskScreen(
 
         // Task list
         LazyColumn(
-            modifier.weight(1f),
+            Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
 
