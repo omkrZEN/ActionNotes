@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/app_launcher.webp" width="140" alt="ActionNotes App Icon"/>
+  <img src="./assets/ic_launcher.webp" width="140" alt="ActionNotes App Icon"/>
 </p>
 
 # ActionNotes
