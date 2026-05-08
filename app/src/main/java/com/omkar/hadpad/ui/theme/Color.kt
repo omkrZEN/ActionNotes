@@ -2,10 +2,26 @@ package com.omkar.hadpad.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Primary Brand
+val ActionPurple = Color(0xFF605E96)
+val ActionPurpleLight = Color(0xFFE8DFFF)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Backgrounds
+val Background = Color(0xFFF8F8FB)
+val Surface = Color(0xFFFFFFFF)
+val SurfaceSoft = Color(0xFFF2F2F7)
+
+// Text
+val TextPrimary = Color(0xFF1B1B3A)
+val TextSecondary = Color(0xFF7B7B8B)
+
+// Borders / Divider
+val BorderLight = Color(0xFFE9E9EF)
+
+// Status Colors
+val HighPriority = Color(0xFFFF6B81)
+val MediumPriority = Color(0xFFFFB84D)
+val LowPriority = Color(0xFF4CD787)
+
+// Icon Colors
+val IconPrimary = Color(0xFF5F5F73)
