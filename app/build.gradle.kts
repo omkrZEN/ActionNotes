@@ -4,7 +4,6 @@ plugins {
 
     alias(libs.plugins.ksp)
 
-
     id("com.google.gms.google-services")
 }
 
@@ -64,9 +63,21 @@ dependencies {
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:34.12.0"))
 
+    //Firebase Auth
+    implementation("com.google.firebase:firebase-auth")
+    implementation("androidx.credentials:credentials:1.7.0-alpha02")
+    implementation("androidx.credentials:credentials-play-services-auth:1.7.0-alpha02")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.2.0")
+
+    // Firestore for later use
+    // implementation("com.google.firebase:firebase-firestore")
+
 
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    // Coil Image
+    implementation("io.coil-kt:coil-compose:2.7.0")
 }
