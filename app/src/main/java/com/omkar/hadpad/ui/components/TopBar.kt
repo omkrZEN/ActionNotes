@@ -5,13 +5,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
@@ -24,15 +21,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
+import com.google.firebase.auth.FirebaseAuth
 import com.omkar.hadpad.R
-
+import com.omkar.hadpad.auth.AuthViewModel
 
 @Composable
-fun ActionTopBar(modifier: Modifier) {
+fun ActionTopBar(
+    modifier: Modifier = Modifier,
+    onProfileClick: () -> Unit
+) {
+    val user = FirebaseAuth.getInstance().currentUser
+    val highResPhotoUrl = user?.photoUrl
+        ?.toString()
+        ?.replace("s96-c", "s256-c")
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -44,13 +52,10 @@ fun ActionTopBar(modifier: Modifier) {
             ),
         verticalAlignment = Alignment.CenterVertically
     ) {
-
-        // Menu Icon
         IconButton(
-            onClick = {},
+            onClick = { },
             modifier = Modifier.size(42.dp)
         ) {
-
             Icon(
                 painter = painterResource(id = R.drawable.menu_bars),
                 contentDescription = null,
@@ -61,11 +66,9 @@ fun ActionTopBar(modifier: Modifier) {
 
         Spacer(modifier = Modifier.width(12.dp))
 
-        // Title Section
         Column(
             modifier = Modifier.weight(1f)
         ) {
-
             Text(
                 text = "ActionNotes",
                 style = MaterialTheme.typography.titleLarge,
@@ -81,25 +84,25 @@ fun ActionTopBar(modifier: Modifier) {
             )
         }
 
-        // Profile Button
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .background(
-                    Color(0xFFE8DFFF)
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-
-            Text(
-                text = "A",
-                color = Color(0xFF714FFD),
-                fontSize = 22.sp,
-                fontWeight = FontWeight.SemiBold
-            )
+        IconButton(onClick = onProfileClick) {
+            if (user != null && !highResPhotoUrl.isNullOrBlank()) {
+                AsyncImage(
+                    model = ImageRequest.Builder(LocalContext.current)
+                        .data(highResPhotoUrl)
+                        .crossfade(true)
+                        .build(),
+                    contentDescription = "Profile photo",
+                    modifier = Modifier
+                        .size(36.dp)
+                        .clip(CircleShape),
+                    contentScale = ContentScale.Crop
+                )
+            } else {
+                Icon(
+                    painter = painterResource(R.drawable.rounded_person_24),
+                    contentDescription = "Profile"
+                )
+            }
         }
     }
 }
-
-
