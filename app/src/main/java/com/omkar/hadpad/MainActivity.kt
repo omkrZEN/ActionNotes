@@ -6,12 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.remember
 import com.google.firebase.auth.FirebaseAuth
-import com.omkar.hadpad.data.local.DatabaseProvider
-import com.omkar.hadpad.data.repository.TaskRepository
-import com.omkar.hadpad.auth.AuthRoot
 import com.omkar.hadpad.auth.AuthViewModel
 import com.omkar.hadpad.auth.GoogleAuthRepository
-import com.omkar.hadpad.ui.ActionNotesHome
+import com.omkar.hadpad.data.local.DatabaseProvider
+import com.omkar.hadpad.data.repository.TaskRepository
 import com.omkar.hadpad.ui.theme.ActionNotesTheme
 import com.omkar.hadpad.ui.viewmodel.TaskViewModel
 
@@ -28,13 +26,20 @@ class MainActivity : ComponentActivity() {
             val taskRepository = remember { TaskRepository(dao) }
             val taskViewModel = remember { TaskViewModel(taskRepository) }
 
+            val firebaseAuth = remember { FirebaseAuth.getInstance() }
+            val authRepository = remember { GoogleAuthRepository(appContext, firebaseAuth) }
+            val authViewModel = remember { AuthViewModel(authRepository) }
 
             ActionNotesTheme {
 
-                ActionNotesHome(viewModel = taskViewModel)
+                AppRoot(
+                    taskViewModel = taskViewModel,
+                    authViewModel = authViewModel,
 
+                    )
             }
         }
     }
 }
+
 
