@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.omkar.hadpad.R
+import com.omkar.hadpad.auth.AuthViewModel
 import com.omkar.hadpad.ui.components.ActionSearchBar
 import com.omkar.hadpad.ui.components.ActionTopBar
 import com.omkar.hadpad.ui.components.AddTaskBottomSheet
@@ -35,10 +36,9 @@ import com.omkar.hadpad.ui.components.CategoryChips
 import com.omkar.hadpad.ui.components.TaskCard
 import com.omkar.hadpad.ui.viewmodel.TaskViewModel
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ActionNotesHome(viewModel: TaskViewModel) {
+fun ActionNotesHome(taskViewModel: TaskViewModel, onProfileClick: () -> Unit) {
 
     var showBottomSheet by remember {
         mutableStateOf(false)
@@ -76,13 +76,13 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
                 )
             }
         }
-        )
+    )
 
     { innerPadding ->
 
         Column {
 
-            ActionTopBar(modifier = Modifier.padding(innerPadding))
+            ActionTopBar(modifier = Modifier.padding(innerPadding), onProfileClick = onProfileClick)
 
             Spacer(modifier = Modifier.height(6.dp))
 
@@ -98,7 +98,7 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
             )
 
             TaskScreen(
-                viewModel = viewModel,
+                viewModel = taskViewModel,
                 selectedCategory = selectedCategory,
             )
 
@@ -107,7 +107,7 @@ fun ActionNotesHome(viewModel: TaskViewModel) {
         if (showBottomSheet) {
 
             AddTaskBottomSheet(
-                viewModel = viewModel,
+                viewModel = taskViewModel,
                 onDismiss = {
                     showBottomSheet = false
                 }
