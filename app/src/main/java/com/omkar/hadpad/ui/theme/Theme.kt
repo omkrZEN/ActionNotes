@@ -47,7 +47,7 @@ fun ActionNotesTheme(
         else LightColorScheme
 
     MaterialTheme(
-        colorScheme = LightColorScheme,
+        colorScheme = colorScheme,
         typography = Typography,
         content = content
     )
