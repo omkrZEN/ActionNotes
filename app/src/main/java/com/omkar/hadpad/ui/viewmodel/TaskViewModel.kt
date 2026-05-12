@@ -12,7 +12,7 @@ class TaskViewModel(
     private val repository: TaskRepository
 ) : ViewModel() {
 
-    val tasks = repository.getAllTasks()
+    val tasks = repository.getAllTasks() // Cold flow is converted into hot stateflow
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
@@ -37,11 +37,5 @@ class TaskViewModel(
         }
     }
 
-    fun toggleComplete(task: Task) {
-        viewModelScope.launch {
-            repository.updateTask(
-                task.copy(isCompleted = !task.isCompleted)
-            )
-        }
-    }
+
 }
