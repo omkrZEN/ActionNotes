@@ -1,11 +1,7 @@
-package com.omkar.hadpad.data.model
+package com.omkar.hadpad.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
-
-
-// This is a table schema
 
 @Entity(tableName = "tasks")
 data class Task(

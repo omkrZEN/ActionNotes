@@ -27,3 +27,11 @@ val PlusJakartaSans = FontFamily(
         FontWeight.Bold
     )
 )
+
+val Lora = FontFamily(
+    Font(
+        R.font.lora_regular,
+        FontWeight.Normal
+
+    )
+)
