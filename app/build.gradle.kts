@@ -62,7 +62,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:34.12.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.13.0"))
 
     //Firebase Auth
     implementation("com.google.firebase:firebase-auth")
@@ -70,15 +70,18 @@ dependencies {
     implementation("androidx.credentials:credentials-play-services-auth:1.7.0-alpha02")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.2.0")
 
-    // Firestore for later use
-    // implementation("com.google.firebase:firebase-firestore")
-
-
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
     // Coil Image
-    implementation("io.coil-kt:coil-compose:2.7.0")
+    implementation(libs.coil.compose)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // ViewModel for
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 }
