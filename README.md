@@ -6,7 +6,7 @@
 
 ## Overview
 
-ActionNotes is a modern task management Android application built using Kotlin and Jetpack Compose. The app follows MVVM architecture and demonstrates modern Android development practices including Room Database, StateFlow, Kotlin Coroutines, Retrofit API integration, and Firebase Authentication.
+ActionNotes is a modern task management Android application built using Kotlin and Jetpack Compose. The app follows MVVM architecture and demonstrates modern Android development practices including Room Database, StateFlow, Kotlin Coroutines and Retrofit API integration.
 
 ## Tech Stack
 
@@ -19,7 +19,6 @@ ActionNotes is a modern task management Android application built using Kotlin a
 - Retrofit
 - Gson
 - Material 3
-- Firebase Authentication
 
 ## Architecture
 
@@ -31,6 +30,5 @@ UI → ViewModel → Repository → Room Database / Retrofit API
 - Local task persistence using Room Database
 - Reactive UI updates with StateFlow
 - Quote of the Day integration using Retrofit
-- Basic user authentication flow using Firebase Authentication
 - Task filtering and priority management
 - Modern UI built with Jetpack Compose and Material 3
