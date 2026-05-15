@@ -11,7 +11,7 @@ val Typography = Typography(
     headlineLarge = TextStyle(
         fontFamily = PlusJakartaSans,
         fontWeight = FontWeight.Bold,
-        fontSize = 28.sp,
+        fontSize = 26.sp,
         lineHeight = 34.sp
     ),
 
@@ -43,7 +43,7 @@ val Typography = Typography(
     bodyMedium = TextStyle(
         fontFamily = PlusJakartaSans,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
+        fontSize = 13.sp,
         lineHeight = 22.sp
     ),
 
@@ -57,8 +57,44 @@ val Typography = Typography(
 
     // Buttons
     labelLarge = TextStyle(
+        fontFamily = PlusJakartaSans, fontWeight = FontWeight.SemiBold, fontSize = 14.sp
+    ),
+
+    // Quote Author etc
+    labelMedium = TextStyle(
         fontFamily = PlusJakartaSans,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 14.sp
+        fontWeight = FontWeight.Medium,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        letterSpacing = 0.5.sp
+    ),
+
+    // Quote Author etc
+    labelSmall = TextStyle(
+        fontFamily = PlusJakartaSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        letterSpacing = 0.5.sp
+    ),
+
+    // Quote Text
+    displayMedium = TextStyle(
+        fontFamily = Lora,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 30.sp,
+        letterSpacing = 0.3.sp
+    ),
+
+    // Quote Small
+    displaySmall = TextStyle(
+        fontFamily = Lora,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.3.sp
+    ),
+
+
     )
-)
