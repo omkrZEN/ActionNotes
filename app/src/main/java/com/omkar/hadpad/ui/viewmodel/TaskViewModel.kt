@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import com.omkar.hadpad.data.repository.TaskRepository
-import com.omkar.hadpad.data.model.Task
+import com.omkar.hadpad.data.local.Task
 
 class TaskViewModel(
     private val repository: TaskRepository

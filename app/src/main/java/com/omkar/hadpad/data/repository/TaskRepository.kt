@@ -1,7 +1,7 @@
 package com.omkar.hadpad.data.repository
 
 import com.omkar.hadpad.data.local.TaskDao
-import com.omkar.hadpad.data.model.Task
+import com.omkar.hadpad.data.local.Task
 import kotlinx.coroutines.flow.Flow
 
 class TaskRepository(
